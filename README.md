@@ -6,13 +6,17 @@ This is a small tool for listing all your bluetooth devices and their version/fe
 Accessing the C API is not the recommended way to interact with bluetooth devices on Linux. Bluez has a DBUS server that exposes the API. It seems all of the required BLE functionality is already in the C API - but I don't know if the DBUS part is fully implemented.
 
 ## Build
+**Prerequisites**: You need the `gcc` and the bluetooth headers installed. I.e. on Ubuntu do
 ```bash
-gcc bt_device_info.c -o bt_device_info -lbluetooth
+$ sudo apt-get install build-essential libbluetooth-dev
 ```
 
+Then to build:
+```bash
+$ gcc bt_device_info.c -o bt_device_info -lbluetooth
+```
 
 ## Run
-
 You can run `./bt_device_info --help` to see all the options:
 ```bash
 $ ./bt_device_info --help
@@ -30,27 +34,21 @@ Available options:
   -h, --help                 this text
 ```
 
-
-
 ### Show a short summary
-
 Just run `bt_device_info` without any options (`--color` is optional).
 ```bash
-./bt_device_info --color
+$ ./bt_device_info --color
 ```
 [Imgur](http://i.imgur.com/NB5ZM15)
 
 
 
 ### Show more details
-
 **--verbose** will give you details like spported bluetooth version and features about the adapter.
 ```bash
 ./bt_device_info ./bt_device_info --color --verbose
 ```
 [Imgur](http://i.imgur.com/l8VKyyM)
-
-
 
 **--unsupported** also lists features that the adapter does not support. This is just to get an overview of all the data you can access through the Bluez API. You can also request most of this information from a remote device (not using this tool, though). Unspported/unavailable features will be marked with a `0` while the working ones are deonoted with a `1`.
 ```bash

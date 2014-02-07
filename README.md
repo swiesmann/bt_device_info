@@ -2,26 +2,13 @@
 
 This is a small tool for listing all your bluetooth devices and their version/features/configuration/state as avaialble by the [Bluez bluetooth api](http://www.bluez.org). Actually a lot of the code was merged from various Bluez tools and library files (especially [tools/hcitool.c](http://git.kernel.org/cgit/bluetooth/bluez.git/tree/tools/hcitool.c), [tools/hcieventmask.c](http://git.kernel.org/cgit/bluetooth/bluez.git/tree/tools/hcieventmask.c) and [lib/hci.c](http://git.kernel.org/cgit/bluetooth/bluez.git/tree/lib/hci.c) were very helpful). I created this little tool since I wanted to know about the properties and features of bluetooth devices I have and I couldn't find a tool that gave me EVERYTHING there is to probe for programmatically. Also, I wanted to get to know the Bluez API because I intend to write code for bluetooth low energy. 
 
-
-
 ## NOTE
-
 Accessing the C API is not the recommended way to interact with bluetooth devices on Linux. Bluez has a DBUS server that exposes the API. It seems all of the required BLE functionality is already in the C API - but I don't know if the DBUS part is fully implemented.
 
-
-
-
 ## Build
-
 ```bash
 gcc bt_device_info.c -o bt_device_info -lbluetooth
 ```
-
-START
-```bash
-./bt_device_info [OPTIONS]
-```
-
 
 
 ## Run

@@ -39,7 +39,9 @@ Just run `bt_device_info` without any options (`--color` is optional).
 ```bash
 $ ./bt_device_info --color
 ```
-[Imgur](http://i.imgur.com/NB5ZM15)
+**Output:**
+![Output of "./bt_device_info --color"](https://github.com/swiesmann/bt_device_info/blob/master/readme_images/bt_device_info_normal.png?raw=true "Output of "./bt_device_info --color")
+
 
 
 
@@ -48,10 +50,11 @@ $ ./bt_device_info --color
 ```bash
 ./bt_device_info ./bt_device_info --color --verbose
 ```
-[Imgur](http://i.imgur.com/l8VKyyM)
+**Output:**
+![Output of "./bt_device_info --color --verbose"](https://github.com/swiesmann/bt_device_info/blob/master/readme_images/bt_device_info_verbose.png?raw=true "Output of "./bt_device_info --color --verbose")
 
 **--unsupported** also lists features that the adapter does not support. This is just to get an overview of all the data you can access through the Bluez API. You can also request most of this information from a remote device (not using this tool, though). Unspported/unavailable features will be marked with a `0` while the working ones are deonoted with a `1`.
 ```bash
 ./bt_device_info --color --verbose --unsupported
 ```
-[Imgur](http://i.imgur.com/t2BPqyK)
+![Output of "./bt_device_info --color --verbose --unsupported"](https://github.com/swiesmann/bt_device_info/blob/master/readme_images/bt_device_info_unsupported.png?raw=true "Output of "./bt_device_info --color --verbose --unsupported")

@@ -447,7 +447,7 @@ int print_each_adapter_info(int socket, int dev_id, long arg)
     struct hci_dev_info hciDevInfo;
     struct hci_version  hciVersion;
 
-    // reserve memory for the device info struct
+    // zero memory for the device info struct
     memset(&hciDevInfo, 0x00, sizeof(hciDevInfo));
 
     // open HCI socket
